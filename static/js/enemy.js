@@ -1,5 +1,5 @@
 class Enemy {
-    constructor(name, level, icon, hp, hpMax, damage, delayAttack, speed) {
+    constructor(name, level, icon, hp, hpMax, damage, delayAttack, speed, floor) {
         this.name = name;
         this.level = level;
         this.icon = icon;
@@ -9,26 +9,50 @@ class Enemy {
         this.delayAttack = delayAttack;
         this.botInterval = null;
         this.width = 200;
+        this.height = 200;
         this.x = window.innerWidth - 100 - this.width;
-        this.y = 225;
+        this.y = floor;
         this.speed = speed;
         this.isAttacking = false;
+        this.element = document.querySelector('.enemy')
+
+        this.spriteManager = new SpriteManager(this.element, {
+            idle: {
+                src: '/static/img/sprites/fire_worm/idle.png',
+                frame: 1,
+                frames: 9,
+                width: 90,
+                height: 90
+            },
+            attack: {
+                src: '/static/img/sprites/fire_worm/attack.png',
+                frame: 1,
+                frames: 16,
+                width: 90,
+                height: 90
+            },
+        })
     }
 
-    update(){
+    update() {
         this.movement();
         this.draw();
+        this.spriteManager.update()
     }
 
     movement() {
-        if (this.x > window.player.x + window.player.width) {
+        if (this.x > (window.player.x + window.player.width)) {
             this.x -= this.speed;
+            this.element.style.transform = `scale(-${ENTITY_SCALE}, ${ENTITY_SCALE})`;
         }
         else if (this.x + this.width < window.player.x) {
             this.x += this.speed;
+            this.element.style.transform = `scale(-${ENTITY_SCALE}, ${ENTITY_SCALE})`;
         }
         else {
-            this.attack()
+            if ((this.y + this.height) >= (window.player.y + window.player.height)) {
+                this.attack()
+            }
         }
     }
 
@@ -36,9 +60,11 @@ class Enemy {
         if (this.isAttacking) return;
         this.isAttacking = true;
         window.player.hp -= this.damage;
+        this.spriteManager.setState('attack');
 
         this.botInterval = setTimeout(() => {
             this.isAttacking = false;
+            this.spriteManager.setState('idle');
         }, this.delayAttack * 1000);
     }
 
@@ -55,10 +81,10 @@ class Enemy {
         document.querySelector('.enemy-panel .stats-bar-fill.hp').style.width = `${this.hp / this.hpMax * 100}%`;
         document.querySelector('.enemy-panel .stats-bar-fill.hp').innerText = `${this.hp}/${this.hpMax}`;
 
-        //icon
-        document.querySelector('.entity.enemy').innerText = this.icon;
+        // icon
+        // document.querySelector('.entity.enemy').innerText = this.icon;
 
-        //enemy position
+        // enemy position
         document.querySelector('.enemy').style.left = `${this.x}px`;
         document.querySelector('.enemy').style.bottom = `${this.y}px`;
     }

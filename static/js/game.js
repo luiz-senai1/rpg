@@ -1,4 +1,4 @@
-window.player = new Player('Luiz', 1, 100, 100, 100, 100, 0, 100, 10, 1, 6);
+window.player = new Player('Luiz', 1, 100, 100, 100, 100, 0, 100, 10, .5, 6);
 window.enemy = getCurrentMonster();
 
 const gameLoop = () => {
@@ -8,6 +8,7 @@ const gameLoop = () => {
     if (window.player.hp <= 0 || window.enemy.hp <= 0) {
         window.enemy.stopEvents();
     }
+
     if (window.enemy.hp <= 0) {
         window.player.exp += 10;
         window.player.checkLevelUp();

@@ -11,7 +11,7 @@
 .stats-bar.hp {
     background-color: #fff;
 }
-.stats-bar-fill.hp{
+.stats-bar-fill.hp {
     background-color: #f44336;
     transition: width 0.3s ease-in-out;
 }
@@ -23,27 +23,24 @@
 .stats-bar.exp {
     background-color: #ffeb3b;
 }
-
 .slot {
     width: 100%;
     border: 1px solid black;
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
     height: 50px;
     font-size: 2rem;
     cursor: pointer;
 }
-
-.slot:hover{
+.slot:hover {
     border-color: #2196f3;
     background-color: #2196f33b;
 }
-
-.ui-card.itens_shortcut_panel, .ui-card.menu_panel {
+.ui-card.itens-shortcut-panel, .ui-card.menu-panel {
     padding: 0;
 }
 
@@ -63,7 +60,7 @@
     width: 200px;
 }
 
-/* Enemy Panel */
+/* Chat Panel */
 .chat-panel {
     position: fixed;
     bottom: 10px;
@@ -80,22 +77,19 @@
 .chat-panel .message {
     font-size: 13px;
 }
-
 .chat-panel .message .username {
     font-weight: bold;
 }
-
 .chat-panel input {
     width: 100%;
     border-radius: 5px;
     border: 1px solid black;
     padding: 5px;
 }
+    
 
 /* Itens Shortcut Panel */
-
-
-.itens_shortcut_panel {
+.itens-shortcut-panel {
     position: fixed;
     bottom: 20px;
     right: calc(50% - 200px);
@@ -103,8 +97,7 @@
 }
 
 /* Menu Panel */
-
-.menu_panel {
+.menu-panel {
     position: fixed;
     bottom: 20px;
     right: 10px;
