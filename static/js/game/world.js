@@ -13,11 +13,26 @@ class World {
     update() {
         if (this.isChangingMap) return;
 
-        if ((window.player.hitboxX + window.player.hitboxWidth) > this.worldWidth) {
-            this.setNextMap();
+        window.enemies = window.enemies.filter(e => !e.dead);
+        const noEnemiesAlive = window.enemies.length === 0;
+
+        const playerRight = window.player.x + window.player.hitboxWidth;
+        const playerLeft = window.player.x;
+
+        if (playerRight >= this.worldWidth) {
+            if (noEnemiesAlive) {
+                this.setNextMap();
+            } else {
+                window.player.x = this.worldWidth - window.player.hitboxWidth;
+            }
         }
-        else if (window.player.hitboxX < 0){
-            this.setPreviousMap();
+
+        if (playerLeft <= 0) {
+            if (noEnemiesAlive) {
+                this.setPreviousMap();
+            } else {
+                window.player.x = 0;
+            }
         }
     }
 
@@ -26,7 +41,7 @@ class World {
         window.player.blockMovement = true;
         this.isChangingMap = true;
         this.openLoadingMap();
-    
+
         window.player.x = from == 'next' ? 40 : this.worldWidth - window.player.hitboxWidth - 100;
 
         setTimeout(() => {
@@ -78,9 +93,9 @@ class World {
     closeLoadingMap() {
         try {
             document.querySelector('.loading-map').remove();
-        } catch (error) {}
+        } catch (error) { }
     }
-    
+
     initEnemies() {
         window.enemies = [];
         document.querySelectorAll('.enemy').forEach(el => el.remove())

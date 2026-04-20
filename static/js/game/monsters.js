@@ -3,11 +3,11 @@ const MONSTERS = [
         id: 1,
         name: 'Verme de Fogo',
         level: 1,
-        hp: 45,
-        hpMax: 45,
+        hp: 40,
+        hpMax: 40,
         mana: 100,
         manaMax: 100,
-        damage: 2,
+        damage: 3,
         x: window.innerWidth - 150,
         size: 90,
         speed: 2,
@@ -60,22 +60,22 @@ const MONSTERS = [
     {
         id: 2,
         name: 'Hero Knight',
-        level: 5,
-        hp: 50,
-        hpMax: 50,
+        level: 3,
+        hp: 90,
+        hpMax: 90,
         mana: 100,
         manaMax: 100,
         damage: 4,
         x: window.innerWidth - 150,
         size: 140,
-        speed: 2.5,
+        speed: 1.8,
         element: 'enemy',
-        delayAttack: .5,
-        cooldownAttack: .5,
+        delayAttack: .4,
+        cooldownAttack: 2,
         attackCountMax: 1,
         dyingTime: 500,
         yCustomOffset: 0,
-        delayTakeHit: .8,
+        delayTakeHit: .4,
         hitboxCustomOffsetY: 10,
         spriteConfig: {
             idle: {
@@ -118,18 +118,18 @@ const MONSTERS = [
     {
         id: 3,
         name: 'Hero Martial',
-        level: 5,
-        hp: 80,
-        hpMax: 80,
+        level: 4,
+        hp: 70,
+        hpMax: 70,
         mana: 100,
         manaMax: 100,
-        damage: 7,
+        damage: 5,
         x: window.innerWidth - 150,
         size: 126,
-        speed: 3,
+        speed: 2.8,
         element: 'enemy',
         delayAttack: .5,
-        cooldownAttack: .5,
+        cooldownAttack: 1.2,
         attackCountMax: 1,
         dyingTime: 500,
         yCustomOffset: 0,
@@ -177,21 +177,21 @@ const MONSTERS = [
         id: 4,
         name: 'Hunterss',
         level: 5,
-        hp: 165,
-        hpMax: 165,
+        hp: 110,
+        hpMax: 110,
         mana: 100,
         manaMax: 100,
-        damage: 5,
+        damage: 6,
         x: window.innerWidth - 150,
         size: 150,
-        speed: 3,
+        speed: 3.2,
         element: 'enemy',
-        delayAttack: .5,
+        delayAttack: .8,
         cooldownAttack: .5,
         attackCountMax: 1,
         dyingTime: 500,
         yCustomOffset: 0,
-        delayTakeHit: .8,
+        delayTakeHit: .9,
         hitboxCustomOffsetY: 10,
         spriteConfig: {
             idle: {
@@ -233,197 +233,81 @@ const MONSTERS = [
     },
     {
         id: 5,
-        name: 'Hero Knight',
-        level: 5,
-        hp: 165,
-        hpMax: 165,
+        name: 'Wizard',
+        level: 6,
+        hp: 120,
+        hpMax: 120,
         mana: 100,
         manaMax: 100,
-        damage: 5,
+        damage: 8,
         x: window.innerWidth - 150,
-        size: 140,
-        speed: 3,
+        size: 231,
+        speed: 2.2,
         element: 'enemy',
-        delayAttack: .5,
+        delayAttack: 1.2,
         cooldownAttack: .5,
         attackCountMax: 1,
         dyingTime: 500,
         yCustomOffset: 0,
-        delayTakeHit: .8,
+        delayTakeHit: 1,
         hitboxCustomOffsetY: 10,
         spriteConfig: {
             idle: {
-                src: '/static/img/sprites/hero_knight/idle.png',
-                frame: 1,
-                frames: 11,
-                width: 140,
-                height: 140
-            },
-            attack1: {
-                src: '/static/img/sprites/hero_knight/attack1.png',
+                src: '/static/img/sprites/wizard/idle.png',
                 frame: 1,
                 frames: 6,
-                width: 140,
-                height: 140
+                width: 231,
+                height: 190
             },
-            die: {
-                src: '/static/img/sprites/hero_knight/death.png',
-                frame: 1,
-                frames: 9,
-                width: 140,
-                height: 140
-            },
-            takehit: {
-                src: '/static/img/sprites/hero_knight/takehit.png',
-                frame: 1,
-                frames: 4,
-                width: 140,
-                height: 140
-            },
-            run: {
-                src: '/static/img/sprites/hero_knight/run.png',
+            attack1: {
+                src: '/static/img/sprites/wizard/attack1.png',
                 frame: 1,
                 frames: 8,
-                width: 140,
-                height: 140
+                width: 231,
+                height: 190
+            },
+            die: {
+                src: '/static/img/sprites/wizard/death.png',
+                frame: 1,
+                frames: 7,
+                width: 231,
+                height: 190
+            },
+            takehit: {
+                src: '/static/img/sprites/wizard/takehit.png',
+                frame: 1,
+                frames: 4,
+                width: 231,
+                height: 190
+            },
+            run: {
+                src: '/static/img/sprites/wizard/run.png',
+                frame: 1,
+                frames: 8,
+                width: 231,
+                height: 190
             }
         }
     },
     {
         id: 6,
-        name: 'Hero Knight',
-        level: 5,
-        hp: 165,
-        hpMax: 165,
-        mana: 100,
-        manaMax: 100,
-        damage: 5,
-        x: window.innerWidth - 150,
-        size: 140,
-        speed: 3,
-        element: 'enemy',
-        delayAttack: .5,
-        cooldownAttack: .5,
-        attackCountMax: 1,
-        dyingTime: 500,
-        yCustomOffset: 0,
-        delayTakeHit: .8,
-        hitboxCustomOffsetY: 10,
-        spriteConfig: {
-            idle: {
-                src: '/static/img/sprites/hero_knight/idle.png',
-                frame: 1,
-                frames: 11,
-                width: 140,
-                height: 140
-            },
-            attack1: {
-                src: '/static/img/sprites/hero_knight/attack1.png',
-                frame: 1,
-                frames: 6,
-                width: 140,
-                height: 140
-            },
-            die: {
-                src: '/static/img/sprites/hero_knight/death.png',
-                frame: 1,
-                frames: 9,
-                width: 140,
-                height: 140
-            },
-            takehit: {
-                src: '/static/img/sprites/hero_knight/takehit.png',
-                frame: 1,
-                frames: 4,
-                width: 140,
-                height: 140
-            },
-            run: {
-                src: '/static/img/sprites/hero_knight/run.png',
-                frame: 1,
-                frames: 8,
-                width: 140,
-                height: 140
-            }
-        }
-    },
-    {
-        id: 7,
-        name: 'Hero Knight',
-        level: 5,
-        hp: 165,
-        hpMax: 165,
-        mana: 100,
-        manaMax: 100,
-        damage: 5,
-        x: window.innerWidth - 150,
-        size: 140,
-        speed: 3,
-        element: 'enemy',
-        delayAttack: .5,
-        cooldownAttack: .5,
-        attackCountMax: 1,
-        dyingTime: 500,
-        yCustomOffset: 0,
-        delayTakeHit: .8,
-        hitboxCustomOffsetY: 10,
-        spriteConfig: {
-            idle: {
-                src: '/static/img/sprites/hero_knight/idle.png',
-                frame: 1,
-                frames: 11,
-                width: 140,
-                height: 140
-            },
-            attack1: {
-                src: '/static/img/sprites/hero_knight/attack1.png',
-                frame: 1,
-                frames: 6,
-                width: 140,
-                height: 140
-            },
-            die: {
-                src: '/static/img/sprites/hero_knight/death.png',
-                frame: 1,
-                frames: 9,
-                width: 140,
-                height: 140
-            },
-            takehit: {
-                src: '/static/img/sprites/hero_knight/takehit.png',
-                frame: 1,
-                frames: 4,
-                width: 140,
-                height: 140
-            },
-            run: {
-                src: '/static/img/sprites/hero_knight/run.png',
-                frame: 1,
-                frames: 8,
-                width: 140,
-                height: 140
-            }
-        }
-    },
-    {
-        id: 8,
         name: 'Evil Wizard',
         level: 10,
-        hp: 500,
-        hpMax: 500,
+        hp: 400,
+        hpMax: 400,
         mana: 100,
         manaMax: 100,
-        damage: 15,
+        damage: 10,
         x: window.innerWidth - 150,
         size: 150,
         speed: 3,
         element: 'enemy',
-        delayAttack: .5,
+        delayAttack: 1.5,
         cooldownAttack: 3,
         attackCountMax: 1,
         dyingTime: 500,
         yCustomOffset: 0,
-        delayTakeHit: .8,
+        delayTakeHit: 1,
         hitboxCustomOffsetY: 7,
         spriteConfig: {
             idle: {
@@ -463,5 +347,4 @@ const MONSTERS = [
             }
         }
     },
-
 ]

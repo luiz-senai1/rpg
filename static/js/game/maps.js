@@ -3,7 +3,7 @@ const Maps = [
       "id": 1,
       "name": "Welcome",
       "slug": "welcome",
-      "background": "/static/img/welcome.png",
+      "background": "/static/img/game/background/welcome.png",
       "floor": "green",
       "enemies": [
         {
@@ -16,7 +16,7 @@ const Maps = [
       "id": 2,
       "name": "Hero Area",
       "slug": "hero-area",
-      "background": "/static/img/field.png",
+      "background": "/static/img/game/background/field.png",
       "floor": "green",
       "enemies": [
         {
@@ -29,8 +29,8 @@ const Maps = [
       "id": 3,
       "name": "Hero Martial",
       "slug": "hero-martial",
-      "background": "/static/img/",
-      "floor": "green",
+      "background": "/static/img/game/background/martial.png",
+      "floor": "darkgray",
       "enemies": [
         {
           "enemy_id": 3,
@@ -40,10 +40,10 @@ const Maps = [
     },
     {
       "id": 4,
-      "name": "Hero Area",
-      "slug": "hero-area",
-      "background": "/static/img/",
-      "floor": "green",
+      "name": "Forest",
+      "slug": "forest",
+      "background": "/static/img/game/background/hunterss.png",
+      "floor": "slategrey",
       "enemies": [
         {
           "enemy_id": 4,
@@ -53,10 +53,10 @@ const Maps = [
     },
     {
       "id": 5,
-      "name": "Hero Area",
-      "slug": "hero-area",
-      "background": "/static/img/",
-      "floor": "green",
+      "name": "Wizard",
+      "slug": "Wizard",
+      "background": "/static/img/game/background/wizard.png",
+      "floor": "darkblue",
       "enemies": [
         {
           "enemy_id": 5,
@@ -66,39 +66,13 @@ const Maps = [
     },
     {
       "id": 6,
-      "name": "Hero Area",
-      "slug": "hero-area",
-      "background": "/static/img/",
-      "floor": "green",
-      "enemies": [
-        {
-          "enemy_id": 6,
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Hero Area",
-      "slug": "hero-area",
-      "background": "/static/img/",
-      "floor": "green",
-      "enemies": [
-        {
-          "enemy_id": 7,
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "id": 8,
       "name": "Boss",
       "slug": "boss",
-      "background": "/static/img/boss.png",
+      "background": "/static/img/game/background/boss.png",
       "floor": "red",
       "enemies": [
         {
-          "enemy_id": 8,
+          "enemy_id": 6,
           "amount": 1
         }
       ]

@@ -8,7 +8,7 @@
 .home-container {
     width: 100vw;
     height: 100vh;
-    background-image: url(../img/background.png);
+    background-image: url(../img/game/background/background.png);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -127,7 +127,7 @@
 .popup-box {
     width: 610px;
     height: 270px;
-    background-image: url('../img/pop-up.png');
+    background-image: url('../img/game/utils/pop-up.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

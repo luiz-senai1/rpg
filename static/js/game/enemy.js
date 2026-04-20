@@ -1,6 +1,6 @@
-class Enemy extends Entity{
+class Enemy extends Entity {
     constructor(data) {
-       super(data);
+        super(data);
         this.speed = data.speed;
         this.hitboxCustomOffsetY = data.hitboxCustomOffsetY;
         this.isAttacking = false;
@@ -8,7 +8,7 @@ class Enemy extends Entity{
         this.takingHit = false;
         this.directionEnemy = 'right';
         this.createBars();
-        
+
     }
 
     update() {
@@ -42,11 +42,11 @@ class Enemy extends Entity{
             this.spriteManager.setState('run');
         }
 
-        if (!this.isAttacking && calculateDistance(this.hitboxX, this.hitboxY, window.player.hitboxX, window.player.hitboxY) <=  window.player.hitboxWidth) {
+        if (!this.isAttacking && calculateDistance(this.hitboxX, this.hitboxY, window.player.hitboxX, window.player.hitboxY) <= window.player.hitboxWidth) {
             if (window.player.hp > 0) {
                 this.attack(() => {
                     if (window.player) {
-                        if (calculateDistance(this.hitboxX, this.hitboxY, window.player.hitboxX, window.player.hitboxY) <=  window.player.hitboxWidth) {
+                        if (calculateDistance(this.hitboxX, this.hitboxY, window.player.hitboxX, window.player.hitboxY) <= window.player.hitboxWidth) {
                             window.player.hp -= this.damage;
                         }
                     }
@@ -73,7 +73,7 @@ class Enemy extends Entity{
         hpbarFill.classList.add('hp');
         hpbar.appendChild(hpbarFill);
         hpbar.style.top = `${this.hitboxXOffset - 15}px`;
-        hpbar.style.left = `${this.hitboxYOffset }px`;
+        hpbar.style.left = `${this.hitboxYOffset}px`;
         this.element.appendChild(hpbar);
 
     }
@@ -96,5 +96,12 @@ class Enemy extends Entity{
             this.takingHit = false;
             this.spriteManager.setState('idle');
         }, this.delayTakeHit * 1000);
+    }
+
+    die() {
+        this.dead = true;
+
+        // remove do DOM se existir
+        this.element?.remove();
     }
 }
